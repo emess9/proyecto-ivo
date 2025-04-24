@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,14 +17,13 @@ body {
   src: url('fonts/Posterman_PERSONAL_USE_ONLY.otf') format('opentype');
 }
 
-/* General */
+/* ==== ENCABEZADO ==== */
 header {
   width: 100%;
   z-index: 1000;
   background-color: white;
 }
 
-/* Top bar */
 .rectangulo {
   width: 100%;
   height: 1.75rem;
@@ -31,6 +33,7 @@ header {
 .top-bar {
   background-color: #000;
   font-size: 0.75rem;
+  text-align: center;
 }
 
 .top-bar a {
@@ -44,7 +47,6 @@ header {
   vertical-align: middle;
 }
 
-/* Main header */
 .main-header {
   background-color: white;
   border-top: 1px solid #ccc;
@@ -56,7 +58,6 @@ header {
   object-fit: contain;
 }
 
-/* Menú */
 .menu a {
   color: black;
   text-decoration: none;
@@ -64,7 +65,7 @@ header {
   font-size: 1rem;
 }
 
-/* Contact box */
+/* ==== CONTACTO Y BOTONES ==== */
 .contact-box .label {
   font-size: 0.75rem;
   color: #333;
@@ -92,7 +93,178 @@ header {
   border: 2px solid black;
 }
 
-/* Responsive */
+/* ==== HERO SECTION ==== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+}
+
+.hero-title {
+  color: white;
+  font-size: 104px;
+  font-family: 'Posterman', sans-serif;
+  font-weight: 400;
+  line-height: 91px;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.22);
+  margin-bottom: 30px;
+  word-wrap: break-word;
+}
+
+.hero-parrafo {
+  color: white;
+  font-size: 18px;
+}
+
+.custom-buttons-frame {
+  margin-left: 0;
+  gap: 1.5rem;
+}
+
+.btn-custom-yellow {
+  padding: 11px 32px 9px 32px;
+  background: linear-gradient(0deg, #F7C906 0%, #F7DF7C 100%);
+  box-shadow: 0px 4px 5px rgba(14, 14, 14, 0.10);
+  outline: 1px solid #0E0E0E;
+  outline-offset: -1px;
+  color: #0E0E0E;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+/* ==== REVIEWS ==== */
+.review-logos {
+  gap: 1.5rem;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 81px;
+}
+
+.review-score {
+  color: white;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.review-detail {
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ==== SECCIÓN GARANTÍA ==== */
+.guarantee-section {
+  height: 800px;
+}
+
+@media (max-width: 768px) {
+  .guarantee-section {
+    height: auto;
+  }
+
+  .guarantee-section .col-md-6,
+  .guarantee-section img {
+    height: auto !important;
+  }
+}
+
+/* ==== HERO BANNER ==== */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url('img/tu-imagen.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-banner .container {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+/* ==== TIPOGRAFÍAS PERSONALIZADAS ==== */
+.about-us {
+  color: #0E0E0E;
+  font-size: 14px;
+  font-family: 'Posterman', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 17.5px;
+}
+
+.font-press {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 35px;
+}
+
+.font-world {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+}
+
+.font-help {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+}
+
+/* ==== RESPONSIVE GENERAL ==== */
 @media (max-width: 991.98px) {
   .main-header {
     text-align: center;
@@ -109,304 +281,74 @@ header {
     margin-bottom: 0.5rem;
   }
 
-  .top-bar {
-    text-align: center;
-  }
-
   .menu a {
     font-size: 0.95rem;
   }
-}
 
-
-
-
-
-
-
-
-
-
-  .hero-section {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+  .browse-text,
+  .browse-arrow {
+    display: none !important;
   }
-  
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 2;
-  }
-  
-  .hero-section .container {
-    position: relative;
-    z-index: 3;
-    height: 100%;
-  }
-  
-  .hero-title {
-    color: white;
-    font-size: 104px;
-    font-family: 'Posterman', sans-serif;
-    font-weight: 400;
-    line-height: 91px;
-    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.22);
-    margin-bottom: 30px;
-    word-wrap: break-word;
-  }
-  
-  .hero-parrafo {
-    color: white;
-    font-size: 18px;
-  }
-  
+
   .custom-buttons-frame {
-    margin-left: 0;
-    gap: 1.5rem;
+    justify-content: center !important;
   }
-  
-  .btn-custom-yellow {
-    padding: 11px 32px 9px 32px;
-    background: linear-gradient(0deg, #F7C906 0%, #F7DF7C 100%);
-    box-shadow: 0px 4px 5px rgba(14, 14, 14, 0.10);
-    outline: 1px solid #0E0E0E;
-    outline-offset: -1px;
-    color: #0E0E0E;
-    font-size: 16px;
-    line-height: 19px;
-  }
-  
-  .review-logos {
-    gap: 1.5rem;
-  }
-  
-  .review-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .review-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 81px;
-  }
-  
-  .review-score {
-    color: white;
-    font-size: 45px;
-    font-weight: 800;
-    line-height: 1;
-  }
-  
-  .review-detail {
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-  }
-  
-  /* Responsive */
-@media (max-width: 768px) {
+
   .hero-section {
     height: auto;
     padding: 80px 15px 40px;
   }
 
+  .hero-title,
+  .hero-parrafo {
+    text-align: center;
+  }
+
   .hero-title {
     font-size: 48px;
     line-height: 1.2;
-    text-align: center;
   }
 
   .hero-parrafo {
     font-size: 16px;
-    text-align: center;
-  }
-
-  .custom-buttons-frame {
-    justify-content: center;
   }
 
   .review-logos {
-    display: none !important; /* Aseguramos que se oculte con alta prioridad */
+    display: none !important;
   }
 
   .review-item {
     justify-content: center;
   }
-}
 
-  
-
-  .about-us {
-    color: #0E0E0E;
-    font-size: 14px;
-    font-family: 'Posterman', sans-serif; /* Asegurate de tener la fuente o usar una alternativa */
-    font-weight: 400;
-    text-transform: uppercase;
-    line-height: 17.5px;
-  }
-  
-  
-  .font-press {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 35px;
+  #indoor-air-quality .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
   }
 
-
-  .font-world {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
+  #indoor-air-quality .bg-white {
+    margin: 0;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
   }
 
-  .font-help {
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
+  .container {
+    flex-direction: column !important;
   }
-
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column !important;
-    }
-  }
-
-  .guarantee-section {
-    height: 800px;
-  }
-
-  @media (max-width: 768px) {
-    .guarantee-section {
-      height: auto;
-    }
-
-    .guarantee-section .col-md-6 {
-      height: auto !important;
-    }
-
-    .guarantee-section img {
-      height: auto !important;
-    }
-  }
-
-  .texto-seccion {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-family: 'Objectivity', sans-serif;
-    color: #0E0E0E;
-  }
-  
-  .titulo-principal {
-    font-size: 48px;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-family: 'Objectivity', sans-serif;
-    color: #0E0E0E;
-  }
-  
-  .tarjeta-opinion {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    padding: 20px;
-    width: 100%;
-    max-width: 530px;
-    height: 330px;
-    font-family: 'Objectivity', sans-serif;
-  }
-  
-  .estrellas {
-    font-size: 18px;
-    color: #000;
-    font-weight: bold;
-  }
-  
-  .fecha {
-    font-size: 12px;
-    color: #333;
-  }
-  
-  .texto-opinion {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .nombre-persona {
-    font-weight: 600;
-    font-size: 14px;
-  }
-  
-  .boton-reviews {
-    padding: 10px 24px;
-    background: linear-gradient(0deg, #F7C906 0%, #F7DF7C 100%);
-    box-shadow: 0px 4px 5px rgba(14, 14, 14, 0.10);
-    outline: 1px solid #0E0E0E;
-    outline-offset: -1px;
-    color: #0E0E0E;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: none;
-  }
-  
 
   .hero-banner {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    background-image: url('img/tu-imagen.png');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
+    height: 350px;
   }
-  
-  .hero-banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* sombreado suave */
-    z-index: 0;
+
+  .hero-banner h1 {
+    font-size: 1.5rem;
   }
-  
-  .hero-banner .container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Para hacerla responsive */
-  @media (max-width: 768px) {
-    .hero-banner {
-      height: 350px;
-    }
-  
-    .hero-banner h1 {
-      font-size: 1.5rem;
-    }
-  }
-  
-  .logo-white {
-    filter: brightness(0) invert(1);
-  }
-  
+}
