@@ -4,13 +4,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 150px;
 }
 
 @font-face {
@@ -18,32 +14,20 @@ body {
   src: url('fonts/Posterman_PERSONAL_USE_ONLY.otf') format('opentype');
 }
 
+/* General */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 1000; /* Asegura que quede por encima del contenido */
-}
-
-
-.menu a {
-  color: black;          /* Color negro */
-  text-decoration: none; /* Sin subrayado */
-}
-
-.clase {
-  font-family: 'Posterman', sans-serif;
-}
-
-/* Rectángulo negro arriba */
-.rectangulo {
-  width: 100%;
-  height: 28px;
-  background-color: black;
+  z-index: 1000;
+  background-color: white;
 }
 
 /* Top bar */
+.rectangulo {
+  width: 100%;
+  height: 1.75rem;
+  background-color: black;
+}
+
 .top-bar {
   background-color: #000;
   font-size: 0.75rem;
@@ -60,28 +44,64 @@ header {
   vertical-align: middle;
 }
 
+/* Main header */
+.main-header {
+  background-color: white;
+  border-top: 1px solid #ccc;
+}
+
+.logo img {
+  max-width: 14rem;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Menú */
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 /* Contact box */
 .contact-box .label {
   font-size: 0.75rem;
   color: #333;
+  margin-bottom: 0.25rem;
 }
 
 .phone {
   font-weight: bold;
-  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  padding: 0.4rem 0.75rem;
   display: inline-block;
   border-radius: 4px;
+  width: fit-content;
 }
 
 .yellow-btn {
-  background-color: #ffc107;
-  color: #000;
+  background: linear-gradient(to right, #f4d03f, #f39c12);
+  color: black;
+  border: 1px solid #ccc;
 }
 
 .white-btn {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .main-header {
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -89,87 +109,23 @@ header {
     margin-bottom: 0.5rem;
   }
 
-  .navbar-toggler {
-    margin-left: auto;
-  }
-
   .top-bar {
     text-align: center;
   }
 
-  .navbar-nav .nav-link {
-    text-align: left;
+  .menu a {
+    font-size: 0.95rem;
   }
 }
 
 
-/* Responsive: menú centrado y colapsable ya lo maneja Bootstrap */
-
-  
 
 
-/* Main header general */
-.main-header {
-    height: 96px;
-    background-color: white;
-    border-top: 1px solid #ccc;
-  }
-  
-  /* Aplicamos padding general de 22px a izquierda y derecha */
-  .main-header-content {
-    padding: 0 22px;
-    width: 100%;
-  }
-  
-  /* Logo */
-  .logo img {
-    width: 233px;
-    height: 80.53px;
-    flex-shrink: 0;
-    object-fit: contain;
-  }
-  
-  /* Menú */
-  .menu span {
-    font-weight: 500;
-    font-size: 16px;
-    cursor: default;
-    white-space: nowrap;
-  }
-  
-  .arrow {
-    font-size: 12px;
-    margin-left: 4px;
-  }
-  
-  /* Botones de contacto */
-  .contact-box .label {
-    font-size: 12px;
-    color: #333;
-    margin-bottom: 4px;
-  }
-  
-  .phone {
-    font-weight: bold;
-    font-size: 16px;
-    padding: 6px 12px;
-    display: inline-block;
-    border-radius: 4px;
-    width: fit-content;
-  }
-  
-  .yellow-btn {
-    background: linear-gradient(to right, #f4d03f, #f39c12);
-    color: black;
-    border: 1px solid #ccc;
-  }
-  
-  .white-btn {
-    background: white;
-    color: black;
-    border: 2px solid black;
-  }
-  
+
+
+
+
+
 
   .hero-section {
     position: relative;
@@ -193,7 +149,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Oscurece un poco */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
   }
   
@@ -213,16 +169,17 @@ header {
     margin-bottom: 30px;
     word-wrap: break-word;
   }
-
-  .hero-parrafo{
+  
+  .hero-parrafo {
     color: white;
+    font-size: 18px;
   }
   
-  .review-logos img {
-    width: 45px;
-    height: auto;
+  .custom-buttons-frame {
+    margin-left: 0;
+    gap: 1.5rem;
   }
-
+  
   .btn-custom-yellow {
     padding: 11px 32px 9px 32px;
     background: linear-gradient(0deg, #F7C906 0%, #F7DF7C 100%);
@@ -233,6 +190,69 @@ header {
     font-size: 16px;
     line-height: 19px;
   }
+  
+  .review-logos {
+    gap: 1.5rem;
+  }
+  
+  .review-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .review-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 81px;
+  }
+  
+  .review-score {
+    color: white;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .review-detail {
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  /* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    padding: 80px 15px 40px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero-parrafo {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .custom-buttons-frame {
+    justify-content: center;
+  }
+
+  .review-logos {
+    display: none !important; /* Aseguramos que se oculte con alta prioridad */
+  }
+
+  .review-item {
+    justify-content: center;
+  }
+}
+
   
 
   .about-us {
