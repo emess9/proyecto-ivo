@@ -158,6 +158,17 @@ header {
   line-height: 19px;
 }
 
+@media (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-section {
+    background: url('img/fondo-mobile.jpg') no-repeat center center/cover;
+  }
+}
+
+
 /* ==== REVIEWS ==== */
 .review-logos {
   gap: 1.5rem;
