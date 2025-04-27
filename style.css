@@ -85,13 +85,41 @@ header {
   background: linear-gradient(to right, #f4d03f, #f39c12);
   color: black;
   border: 1px solid #ccc;
+  text-decoration: none;
 }
 
 .white-btn {
   background: white;
   color: black;
   border: 2px solid black;
+  text-decoration: none;
 }
+
+.boton-blanco {
+  padding: 11px 32px 9px 32px;
+  background: #ffffff;
+  box-shadow: 0px 4px 5px rgba(14, 14, 14, 0.10);
+  outline: 1px solid #0E0E0E;
+  outline-offset: -1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0E0E0E;
+  font-size: 16px;
+  font-family: 'Objectivity', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 19px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.boton-blanco:hover {
+  box-shadow: 0px 6px 8px rgba(14, 14, 14, 0.2);
+  transform: translateY(-2px);
+}
+
 
 /* ==== HERO SECTION ==== */
 .hero-section {
@@ -148,15 +176,34 @@ header {
 }
 
 .btn-custom-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 11px 32px 9px 32px;
+  min-height: 39px;
+  min-width: 160px;
   background: linear-gradient(0deg, #F7C906 0%, #F7DF7C 100%);
   box-shadow: 0px 4px 5px rgba(14, 14, 14, 0.10);
   outline: 1px solid #0E0E0E;
   outline-offset: -1px;
   color: #0E0E0E;
   font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
   line-height: 19px;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Objectivity', sans-serif;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.btn-custom-yellow:hover {
+  background: linear-gradient(0deg, #f7df7c 0%, #f7c906 100%);
+  transform: translateY(-2px);
+}
+
 
 /* ==== REVIEWS ==== */
 .review-logos {
@@ -168,6 +215,10 @@ header {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.review-item:hover {
+  transform: scale(1.05);
 }
 
 .review-text {
@@ -189,6 +240,16 @@ header {
   font-size: 11px;
   font-weight: 600;
 }
+
+.card-img-top {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+}
+
 
 /* ==== SECCIÓN GARANTÍA ==== */
 .guarantee-section {
@@ -264,6 +325,19 @@ header {
   font-size: 50px;
 }
 
+.mapa-img {
+  width: 100%; 
+  height: auto; 
+}
+
+@media (max-width: 767px) {
+  .mapa-img {
+    width: 100%; 
+    height: auto;
+  }
+}
+
+
 /* ==== RESPONSIVE GENERAL ==== */
 @media (max-width: 991.98px) {
   .main-header {
@@ -283,11 +357,6 @@ header {
 
   .menu a {
     font-size: 0.95rem;
-  }
-
-  .browse-text,
-  .browse-arrow {
-    display: none !important;
   }
 
   .custom-buttons-frame {
