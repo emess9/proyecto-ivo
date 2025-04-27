@@ -199,6 +199,10 @@ header {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
+.btn-custom-yellow:hover {
+  transform: scale(1.05);  
+}
+
 @media (max-width: 768px) {
   .hero-video {
     display: none;
