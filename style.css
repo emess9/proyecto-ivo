@@ -199,9 +199,14 @@ header {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.btn-custom-yellow:hover {
-  background: linear-gradient(0deg, #f7df7c 0%, #f7c906 100%);
-  transform: translateY(-2px);
+@media (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-section {
+    background: url('img/fondo-mobile.jpg') no-repeat center center/cover;
+  }
 }
 
 
